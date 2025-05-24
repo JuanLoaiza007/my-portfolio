@@ -1,0 +1,26 @@
+---
+import HeaderItem from "./HeaderItem.astro";
+import MobileMenu from "./MobileMenu.jsx";
+import { SECTIONS } from "../config/sections";
+---
+
+<nav
+  class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-md fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
+>
+  <div
+    class="max-w-screen-xl flex items-center md:justify-center mx-auto p-2 md:p-4"
+  >
+    <!-- Mobile menu button and drawer -->
+    <MobileMenu client:load sections={SECTIONS} />
+
+    <!-- Desktop menu -->
+    <div
+      class="items-center justify-center hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-sticky"
+    >
+      <ul class="flex flex-row gap-2">
+        {SECTIONS.map(({ title, href }) => <HeaderItem {...{ title, href }} />)}
+      </ul>
+    </div>
+  </div>
+</nav>

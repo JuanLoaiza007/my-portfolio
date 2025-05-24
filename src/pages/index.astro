@@ -1,11 +1,148 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../icons/Mail.astro";
+import { CONTACT_URLS as CONTACT } from "../config/contactConstants";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Portafolio de Juan David Loaiza - Ingeniero de Sistemas en formación. Desarrollador y Programador"
+  description="Contrata a Juan David Loaiza para desarrollar tu aplicación web, móvil o de escritorio. Especializado en explorar nuevas tecnologías y soluciones innovadoras."
+>
+  <main class="flex flex-col px-4 text-sm md:text-lg">
+    <SectionContainer
+      class="lg:max-w-[600px] py-22 lg:py-38 pb-8 lg:pb-16 lg:ml-40 xl:ml-80"
+    >
+      <div class="flex flex-row">
+        <div
+          class="size-16 md:size-24 rounded-full overflow-hidden flex items-center justify-center my-8"
+        >
+          <img
+            src="profile/juan-main-profile.webp"
+            alt="juanloaiza007"
+            class="max-w-full max-h-full object-contain scale-105 hover:scale-110 transition duration-300 ease-in-out"
+          />
+        </div>
+        <a
+          href="https://github.com/juanloaiza007/"
+          target="_blank"
+          rel="noreferrer"
+          class="flex my-auto mx-4 items-center"
+        >
+          <Badge>Disponible para trabajar!</Badge>
+        </a>
+      </div>
+      <h1 class="text-white text-xl lg:text-5xl font-bold flex flex-row">
+        Hola, soy Juan
+      </h1>
+      <h2 class="opacity-85 text-pretty">
+        <span class="text-yellow-400 font-bold">
+          Ingeniero de Sistemas en formación.
+        </span>
+        Apasionado por el desarrollo
+        <span class="font-bold text-purple-300 opacity-90">
+          frontend y backend.
+        </span>
+        Especializado en la
+        <span class="font-semibold text-blue-300">
+          exploración y adaptación de nuevas tecnologías.
+        </span>
+      </h2>
+      <ul class="flex flex-row gap-2 text-center items-center">
+        <li>
+          <SocialPill href={CONTACT.github}>
+            <GitHubIcon fill="white" class="size-4 lg:size-6" />
+            Github
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href={CONTACT.linkedin}>
+            <LinkedInIcon fill="white" class="size-4 lg:size-6" />
+            LinkedIn
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href={CONTACT.email}>
+            <MailIcon fill="white" class="size-4 lg:size-6" />
+            Correo
+          </SocialPill>
+        </li>
+      </ul>
+    </SectionContainer>
+
+    <!-- <SectionContainer id="experience">
+      <h2 class="flex flex-row text-4xl font-semibold mb-6">
+        <Briefcase class="size-6 mr-2 my-auto" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer> -->
+
+    <SectionContainer id="projects">
+      <h2 class="flex flex-row text-2xl lg:text-4xl font-semibold mb-6">
+        <CodeIcon class="size-6 mr-2 my-auto" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="about" class="items-center pb-20">
+      <h2 class="w-full flex flex-row text-2xl lg:text-4xl font-semibold">
+        <BriefcaseIcon class="size-6 mr-2" />
+        Sobre mi
+      </h2>
+      <div class="flex flex-col md:flex-row md:justify-between items-center">
+        <div
+          class="size-[50%] md:size-3/12 rounded-xl shadow-xl border-4 border-white overflow-hidden flex items-center justify-center my-8"
+        >
+          <img
+            src="profile/juan-box.webp"
+            alt="juanloaiza007"
+            class="max-w-full max-h-full object-contain scale-120 hover:scale-130 transition duration-300 ease-in-out"
+          />
+        </div>
+        <div
+          class="lg:max-w-2/3 text-sm lg:text-base text-pretty space-y-4 opacity-90"
+        >
+          <p>
+            Soy <span class="font-bold text-blue-300">Juan David</span>, aunque
+            mis amigos —con una eficiencia digna de admirar— me dicen
+            simplemente Juan. Actualmente estudio <span class="text-yellow-400"
+              >Ingeniería de Sistemas en la Universidad del Valle y disfruto
+              convertir ideas en cosas que realmente funcionen.</span
+            >
+          </p>
+          <p>
+            He logrado agarrarle buen cariño (y respeto) al desarrollo web
+            moderno, especialmente con <span class="font-medium">Next.js</span>, <span
+              class="font-medium text-purple-300">React 18</span
+            > y <span class="font-medium text-blue-300">Tailwind CSS</span>, que
+            ya forman parte de mi stack. <span
+              class="font-medium text-yellow-400"
+            >
+              Además, me enorgullece pensar que soy organizado, puntual y
+              eficiente con mi tiempo.
+            </span>
+          </p>
+          <p>
+            Pero lo que realmente me define es una curiosidad que no se apaga ni
+            a punta de <span class="text-red-300">café</span>. No solo le hablo
+            al código, también coqueteo con el <span class="text-yellow-400">
+              diseño de interfaces 🌟 y me emocionan temas como la Inteligencia
+              Artificial ✨, CI/CD 🚀, Linux 🐧, DevOps ⚒️ y automatización con
+              GitHub Actions 🔁.</span
+            >
+          </p>
+        </div>
+      </div>
+    </SectionContainer>
+  </main>
 </Layout>

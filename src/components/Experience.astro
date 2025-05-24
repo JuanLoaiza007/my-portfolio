@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Julio 2026 - Actualmente",
+    title: "Frontend Developer",
+    company: "Mi primera chamba",
+    description:
+      "Me acuerdo el día que de la chamba yo me enamoré. Mi viejo llegó sonriendo, me dijo que yo ya chambié. Le pedí otra chamba y me dijo que la de chambear me la sé.",
+    link: "https://www.youtube.com/watch?v=--1hVeRe6do",
+  },
+  {
+    date: "Actualmente...",
+    title: "Ingeniero de Sistemas en formación",
+    company: "Universidad del Valle en Cali, Colombia",
+    description:
+      "Estudiante de Ingeniería de Sistemas con reconocimiento a Excelencia Académica en los periodos 2023-I, 2023-II, 2024-I y 2024-II. Mi trabajo de grado fue un Sistema de Pregunta-Respuesta para procesos estudiantiles usando Procesamiento de Lenguaje Natural (NLP), fine-tuning y técnicas extractivas.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

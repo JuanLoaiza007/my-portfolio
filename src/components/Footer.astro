@@ -1,0 +1,23 @@
+---
+import { CONTACT_URLS as CONTACT } from "../config/contactConstants";
+import { SECTIONS } from "../config/sections";
+import FooterItem from "./FooterItem.astro";
+---
+
+<footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
+  <div
+    class="flex flex-col md:flex-row w-full mx-auto max-w-screen-xl p-4 md:flex md:justify-between"
+  >
+    <span
+      class="flex flex-col md:flex-row text-sm text-gray-500 sm:text-center dark:text-gray-400 text-center md:text-left gap-2"
+    >
+      Juan Loaiza.
+      <p class="text-xs">© Inspirado en el diseño porfolio.dev de midudev.</p>
+    </span>
+    <ul
+      class="flex flex-wrap mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 gap-4 items-center md:items-end justify-center md:justify-end"
+    >
+      {SECTIONS.map(({ title, href }) => <FooterItem {...{ title, href }} />)}
+    </ul>
+  </div>
+</footer>
